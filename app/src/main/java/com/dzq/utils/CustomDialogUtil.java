@@ -25,7 +25,7 @@ public class CustomDialogUtil {
      */
     public static View normalDialog(final Context context, String title, String content, String okText, String cancelText, final DialogInterface.OnClickListener okListener, final DialogInterface.OnClickListener cancelListener, boolean isAutoDissmiss) {
 
-        CustomDialog.Builder customBuilder = new CustomDialog.Builder(context);
+        CustomDialog.CustomDialogBuilder customBuilder = new CustomDialog.CustomDialogBuilder(context);
         customBuilder.setTitle(title)
                 .setMessage(content)
                 .setNegativeButton(cancelText, new DialogInterface.OnClickListener() {

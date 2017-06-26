@@ -31,7 +31,7 @@ public class CustomDialog extends Dialog {
     /**
      * Helper class for creating a custom dialog
      */
-    public static class Builder {
+    public static class CustomDialogBuilder {
 
         private Context context;
         private String title;
@@ -42,7 +42,7 @@ public class CustomDialog extends Dialog {
 
         private OnClickListener positiveButtonClickListener, negativeButtonClickListener;
 
-        public Builder(Context context) {
+        public CustomDialogBuilder(Context context) {
             this.context = context;
         }
 
@@ -52,7 +52,7 @@ public class CustomDialog extends Dialog {
          * @param message
          * @return
          */
-        public Builder setMessage(String message) {
+        public CustomDialogBuilder setMessage(String message) {
             this.message = message;
             return this;
         }
@@ -63,7 +63,7 @@ public class CustomDialog extends Dialog {
          * @param message
          * @return
          */
-        public Builder setMessage(int message) {
+        public CustomDialogBuilder setMessage(int message) {
             this.message = (String) context.getText(message);
             return this;
         }
@@ -74,7 +74,7 @@ public class CustomDialog extends Dialog {
          * @param title
          * @return
          */
-        public Builder setTitle(int title) {
+        public CustomDialogBuilder setTitle(int title) {
             this.title = (String) context.getText(title);
             return this;
         }
@@ -85,7 +85,7 @@ public class CustomDialog extends Dialog {
          * @param title
          * @return
          */
-        public Builder setTitle(String title) {
+        public CustomDialogBuilder setTitle(String title) {
             this.title = title;
             return this;
         }
@@ -98,7 +98,7 @@ public class CustomDialog extends Dialog {
          * @param v
          * @return
          */
-        public Builder setContentView(View v) {
+        public CustomDialogBuilder setContentView(View v) {
             this.contentView = v;
             return this;
         }
@@ -110,7 +110,7 @@ public class CustomDialog extends Dialog {
          * @param listener
          * @return
          */
-        public Builder setPositiveButton(int positiveButtonText, OnClickListener listener) {
+        public CustomDialogBuilder setPositiveButton(int positiveButtonText, OnClickListener listener) {
             this.positiveButtonText = (String) context.getText(positiveButtonText);
             this.positiveButtonClickListener = listener;
             return this;
@@ -123,7 +123,7 @@ public class CustomDialog extends Dialog {
          * @param listener
          * @return
          */
-        public Builder setPositiveButton(String positiveButtonText, OnClickListener listener) {
+        public CustomDialogBuilder setPositiveButton(String positiveButtonText, OnClickListener listener) {
             this.positiveButtonText = positiveButtonText;
             this.positiveButtonClickListener = listener;
             return this;
@@ -136,7 +136,7 @@ public class CustomDialog extends Dialog {
          * @param listener
          * @return
          */
-        public Builder setNegativeButton(int negativeButtonText, OnClickListener listener) {
+        public CustomDialogBuilder setNegativeButton(int negativeButtonText, OnClickListener listener) {
             this.negativeButtonText = (String) context.getText(negativeButtonText);
             this.negativeButtonClickListener = listener;
             return this;
@@ -149,7 +149,7 @@ public class CustomDialog extends Dialog {
          * @param listener
          * @return
          */
-        public Builder setNegativeButton(String negativeButtonText, OnClickListener listener) {
+        public CustomDialogBuilder setNegativeButton(String negativeButtonText, OnClickListener listener) {
             this.negativeButtonText = negativeButtonText;
             this.negativeButtonClickListener = listener;
             return this;
